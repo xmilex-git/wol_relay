@@ -119,7 +119,7 @@ export default async function handler(
       -H "Referer: ${server_url}/ui/wol" \\
       -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" \\
       -H "Cookie: efm_session_id=${sessionId}" \\
-      -d '{"method":"wol/signal","params":{"mac":"${mac}"}}'`
+      -d '{"method":"wol/signal","params":["${mac}"]}'`
 
     const { stdout: wolOutput, stderr: wolError } = await execAsync(wolCommand)
     
